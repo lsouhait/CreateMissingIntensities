@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
       QueryStream << "select channelid from channel where imagingsessionid = ";
       QueryStream << ImgID;
       std::vector<std::string> ChannelIDs = ExecuteSelectQuery( DatabaseConnector, QueryStream.str());
-      while (*iter == ImgID )//for each imagingsessionid
+      while ((*iter == ImgID) && (iter != ListImgIDsMeshIDsWithProblem.end()-2) )//for each imagingsessionid
         {
         iter++;
         std::string MeshID = *iter; //for each meshid
